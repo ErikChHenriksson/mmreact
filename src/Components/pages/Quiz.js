@@ -21,7 +21,7 @@ class Quiz extends React.Component{
         axios.get('top99movies.json')
         .then(res => this.setState({ movies: res.data }))
         //let title = this.state.movies[0] ? this.state.movies[0].title : null;
-        fetch('http://www.omdbapi.com/?apikey=cd5550cd&t=Black+Panther')
+        fetch('https://www.omdbapi.com/?apikey=cd5550cd&t=Black+Panther')
             .then(res => res.json())
             .then(json => {
                 this.setState({
@@ -36,7 +36,7 @@ getQuestion = () => {
     let title = this.state.movies ? this.state.movies[rindex].title : null;
     let titlefix = title.replace(/ /g,"+");
     console.log(titlefix);
-    let address = 'http://www.omdbapi.com/?apikey=cd5550cd&t=' + titlefix;
+    let address = 'https://www.omdbapi.com/?apikey=cd5550cd&t=' + titlefix;
     console.log(address);
     fetch(address)
             .then(res => res.json())
